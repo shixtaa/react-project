@@ -1,0 +1,32 @@
+.userinfo-box{
+  display : flex;
+  color : #666666;
+}
+.userinfo-box>img{
+  width : 80px;
+  height : 80px;
+  margin :0 30px;
+  border-radius : 50%;
+}
+.info-left{
+  display : flex;
+  flex-direction : column;  
+  margin :40px;
+}
+.info-left>span{
+  min-width : 160px;
+  height : 50px;
+}
+.update{
+  color : blue;
+}
+.info-right{
+  display : flex;
+  flex-direction : column;  
+  margin :40px;
+}
+.info-right>span{
+  min-width : 160px;
+  height : 50px;
+
+}

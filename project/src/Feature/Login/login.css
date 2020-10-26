@@ -1,0 +1,58 @@
+.regist-container{
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  width : 100vw;
+  height : 100vh;
+}
+.regist-warpper{
+  display : flex;
+  flex-direction : row;
+  align-items : center;
+  width : 1000px;
+  margin : 0 auto;
+  border-radius : 8px;
+  box-shadow : 2px 3px 7px #d8d8d8;
+  
+}
+.regist-left{
+  width : 500px;
+  padding : 40px;
+}
+.regist-left>img{
+  width : 100%;
+}
+.regist-right{
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  width : 500px;
+  
+}
+.regist-right>h1{
+  font-size : 24px;
+  line-height : 60px;
+  color : #333;
+}
+.regist-right>input {
+  width : 300px;
+  height : 40px;
+  padding : 0 10px;
+  margin : 15px 0;
+  font-size : 14px;
+  color : #333;
+  border : solid 1px #eee;
+  border-radius : 4px;
+}
+.regist-right>button{
+  width : 300px;
+  height : 40px;
+  margin : 20px 0 0;
+  font-size : 16px;
+  font-weight : 600;
+  color : #fff;
+  background : #6963d0;
+  border :none;
+  border-radius : 6px;
+  outline : none;
+}

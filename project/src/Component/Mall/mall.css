@@ -1,0 +1,98 @@
+.mall-container{
+  display : flex;
+  flex-direction : column;
+  width : 100%;
+}
+.mall-nav{
+  height : 60px;
+  padding : 0 20px;
+  font-size : 22px;
+  line-height : 60px;
+  box-shadow : 0 3px 6px #eee;
+}
+.mall-main{
+  box-sizing : border-box;
+  padding : 50px;
+}
+.mall-hd{
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  justify-content : center;
+  height : 180px;
+  margin-bottom : 30px;
+  color : #fff;
+  background-image : url('../../Assets/jifen-background.png');
+  background-repeat : no-repeat;
+  background-size : cover;
+  border-radius : 6px;
+}
+.mall-hd>span{
+  font-size : 50px;
+  font-weight : 700;
+}
+.item-list{
+  display : flex;
+  flex-wrap : wrap;
+  margin-top :20px;
+}
+.per-item{
+  display : flex;
+  flex-direction : column;
+  width : 250px;
+  height : 320px;
+  margin :30px 50px;
+  overflow : hidden;
+  border : 1px solid #eee;
+  border-radius : 5px;
+  box-shadow : 0 3px 5px #eee;
+}
+
+.per-item>img{
+  width : 250px;
+  height : 250px;
+}
+.per-item>p{
+  width : 230px;
+  padding : 0 10px;
+  margin :5px 0;
+  overflow : hidden;
+  color : #666;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+}
+.item-ft{
+  box-sizing : border-box;
+  display : flex;
+  align-items : center;
+  justify-content : space-between;
+  height : 30px;
+  padding : 0 10px;
+  line-height : 30px;
+  color : #726DD4;
+}
+.item-ft>div{
+  display : flex;
+  align-items : center;
+}
+
+.item-ft>div>img{
+    width : 20px;
+    height : 20px;
+    margin : 0 5px 0 0;
+  }
+.item-ft>div>span{
+  height : 20px;
+  line-height : 20px;
+}
+  .exchange-btn{
+  display : inline-block;
+  /* width : 50px; */
+  height : 28px;
+  font-size : 14px;
+  color : #fff;
+  background-color : #726DD4;
+  border :none;
+  border-radius : 3px;
+  outline : none;
+}
