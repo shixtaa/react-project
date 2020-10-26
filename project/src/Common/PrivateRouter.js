@@ -14,7 +14,7 @@ export default function PrivateRouter ({ component: Component , ...rest }) {
     <Route { ...rest } render={ ()=>{
       return (
 
-        auth ? <Component/> : <Redirect to='/user/tabuser/info'></Redirect>
+        auth ? <Component/> : <Redirect to='/user/tabuser'></Redirect>
       );
 
     } } ></Route>

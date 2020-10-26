@@ -11,7 +11,6 @@ export default function Modal () {
         <div className={ 'modal-box' }>
           <span>{modal.message}</span>
           <button onClick={ ()=>{
-            modal.func();
             dispatch(hideModal());
           } }>close</button>
         </div>

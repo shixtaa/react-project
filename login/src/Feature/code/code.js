@@ -63,13 +63,7 @@ export default function Code () {
         }else{
           inputRef.current[index].focus()
         }
-      }else{
-          inputRef.current[index].focus()
-          if(code.length==4&&index!==3){
-            e.preventDefault();
-            // inputRef.current[3].focus()
-          }
-      } 
+      }
     }
   }   
   
@@ -84,22 +78,12 @@ export default function Code () {
     }else{
       if(index<3){
         inputRef.current[index+1].focus()
+      }else{
+        inputRef.current[index].focus()
       }
     } 
   }
-  
-  // function test(e,index){
-  //   if(code.length==4&&index!==3&&code[index]===1&&e.key==='Backspace'){
-  //     // inputRef.current[3].focus()
-  //     e.preventDefault();
-      
-  //   }
-  // }
 
-//   onKeyUp={(e)=>{test(e,0)}}
-// onKeyUp={(e)=>{test(e,1)}}
-// onKeyUp={(e)=>{test(e,2)}}
-// onKeyUp={(e)=>{test(e,3)}}
   return (
     <div className='code'>
       <h1>请输入验证码:</h1>

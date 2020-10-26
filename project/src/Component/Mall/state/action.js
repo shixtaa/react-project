@@ -21,9 +21,12 @@ export function putExchange (value){
   return async (dispatch)=>{
     try {
       dispatch({ type:ActionType.SHOW_LOADING });
-      await exchange(value);
+      let result = await exchange(value);
+      return result;
     } catch (error) {
       dispatch({ type:ActionType.SHOW_MODAL,data:{ message:error.message } });
+      let result = { success:false };
+      return result;
     }finally{
       dispatch({ type:ActionType.HIDE_LOADING });
     }

@@ -10,7 +10,7 @@ import { loadShop,putExchange } from './state/action';
 
 import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
-import { Modal, Button } from 'antd';
+import { Modal, message, Button } from 'antd';
 
 // import { exchange } from '../../Request/exchange';
 
@@ -19,25 +19,32 @@ export default function Mall () {
   const mall = useSelector(state=>state.mall.shopList);
   const dispatch = useDispatch();
   const history = useHistory();
+
   const [ alert,setAlert ] = useState({
     ModalText: '确认兑换？',
     visible: false,
     // confirmLoading: false,
     flag:false
   });
+  /* 加载用户信息 */
   useEffect(() => {
     dispatch(loadUserInfo(history));
     dispatch(loadShop(history));
   }, [ history,dispatch,alert.flag ]);
-  /* 提示框 */
+
+  /* 提示框 确认兑换*/
   async function handleOk (){
-    await dispatch(putExchange(alert.id1));
+    let result = await dispatch(putExchange(alert.id));
     setAlert({
       ...alert,
       visible:false,
       flag:!alert.flag
     });
+    if(result.success){
+      message.success('兑换成功');
+    }
   }
+  /* 取消兑换 */
   function handleCancel (){
     setAlert({
       ...alert,
@@ -45,6 +52,7 @@ export default function Mall () {
       id:''
     });
   }
+  /* 渲染商品列表 */
   function renderShopList (){
     return _.map(mall.list,(item)=>{
       return (
@@ -56,19 +64,15 @@ export default function Mall () {
               <img src={ img5 } alt=""/>
               <span>{item.price}积分</span>
             </div>
-            {/* <button className="exchange-btn" type="text" onClick={ ()=>{
-              console.log(item._id);
-              exchange(item._id);
-            } }>兑换</button> */}
-            <Button className="exchange-btn" type="primary" onClick={ ()=>{setAlert({ ...alert,visible: true ,id:item._id  });} }>
+            <Button className="exchange-btn" type="primary"
+              onClick={ ()=>{setAlert({ ...alert,visible: true ,id:item._id  });} }>
               兑换
             </Button>
             <Modal
               title="提示"
               visible={ alert.visible }
               onOk={ handleOk }
-              onCancel={ handleCancel }
-            >
+              onCancel={ handleCancel }>
               <p>{alert.ModalText}</p>
             </Modal>
           </div>
